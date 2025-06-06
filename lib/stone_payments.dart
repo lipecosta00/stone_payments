@@ -110,6 +110,15 @@ class StonePayments {
     );
   }
 
+  /// Obtém as credenciais do SDK da Stone Payments.
+  ///
+  /// Retorna:
+  ///
+  /// * Retorna uma `Future<String?>` com as credenciais no formato: serialNumber:stoneCode.
+  static Future<String?> getCredentials() {
+    return StonePaymentsPlatform.instance.getCredentials();
+  }
+
   /// Imprime um arquivo a partir de uma lista de textos e imagens.
   ///
   /// Parâmetros:
@@ -175,7 +184,8 @@ class StonePayments {
     required String initiatorTransactionKey,
     bool? printReceipt,
   }) {
-    assert(initiatorTransactionKey != "", 'A chave da transação deve ser válida.');
+    assert(
+        initiatorTransactionKey != "", 'A chave da transação deve ser válida.');
 
     return StonePaymentsPlatform.instance.cancelPayment(
       initiatorTransactionKey: initiatorTransactionKey,

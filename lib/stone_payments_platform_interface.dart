@@ -63,6 +63,11 @@ abstract class StonePaymentsPlatform extends PlatformInterface {
     throw UnimplementedError('activateStone() has not been implemented.');
   }
 
+  /// Get Credentials
+  Future<String?> getCredentials() {
+    throw UnimplementedError('getCredentials() has not been implemented.');
+  }
+
   /// Print
   Future<String?> print(List<ItemPrintModel> items) {
     throw UnimplementedError('print() has not been implemented.');

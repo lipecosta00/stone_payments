@@ -1,6 +1,7 @@
 package dev.ltag.stone_payments.usecases
 
 import android.content.Context
+import android.os.Build
 import android.util.Log
 import dev.ltag.stone_payments.Result
 import stone.application.StoneStart
@@ -14,6 +15,8 @@ import java.lang.Exception
 class ActivateUsecase(
     private val context: Context,
 ) {
+    lateinit var serial: String
+
     fun doActivate(appName: String, stoneCode: String, qrCodeProviderId: String?, qrCodeAuthorization: String?, callback: (Result<Boolean>) -> Unit) {
 
         val stoneKeys = HashMap<StoneKeyType, String>()
@@ -52,5 +55,17 @@ class ActivateUsecase(
 
             callback(Result.Success(true))
         }
+    }
+
+    fun getCredentials(): String {
+        val userList: List<UserModel>? = StoneStart.init(context)
+        val stoneCode = userList?.first()?.stoneCode ?: "Mobile"
+         
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            serial = Build.getSerial()
+        } else {
+            serial = Build.SERIAL
+        }
+        return "$serial:$stoneCode"
     }
 }

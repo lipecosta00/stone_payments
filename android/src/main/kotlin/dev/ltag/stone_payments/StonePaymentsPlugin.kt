@@ -59,6 +59,9 @@ class StonePaymentsPlugin : FlutterPlugin, MethodCallHandler, Activity() {
                     result.error("UNAVAILABLE", "Cannot Activate", e.toString())
                 }
             }
+            "getCredentials" -> {
+                result.success(activateUsecase!!.getCredentials())
+            }
             "payment" -> {
                 try {
                     paymentUsecase!!.doPayment(

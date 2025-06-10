@@ -59,8 +59,7 @@ class ActivateUsecase(
 
     fun getCredentials(): String {
         val userList: List<UserModel>? = StoneStart.init(context)
-        val stoneCode = Build.MANUFACTURER
-//        val stoneCode = userList?.first()?.stoneCode ?: "Sp_Mobile"
+        val stoneCode = userList?.first()?.stoneCode ?: "Sp_Mobile"
          
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             serial = Build.getSerial()

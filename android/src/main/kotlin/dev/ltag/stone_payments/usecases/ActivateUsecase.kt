@@ -68,4 +68,11 @@ class ActivateUsecase(
         }
         return "$serial:$stoneCode"
     }
+
+    fun getDeviceInfo(): String {
+        val serial: String? = Stone.getPosAndroidDevice()?.getPosAndroidSerialNumber() ?: "s_info_serial"
+        val stoneCode: String? = Stone.getPosAndroidDevice()?.getPosAndroidManufacturer() ?: "s_info_stoneCode"
+         
+        return "$serial:$stoneCode"
+    }
 }

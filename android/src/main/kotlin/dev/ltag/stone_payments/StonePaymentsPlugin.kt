@@ -62,6 +62,9 @@ class StonePaymentsPlugin : FlutterPlugin, MethodCallHandler, Activity() {
             "getCredentials" -> {
                 result.success(activateUsecase!!.getCredentials())
             }
+            "getDeviceInfo" -> {
+                result.success(activateUsecase!!.getDeviceInfo())
+            }
             "payment" -> {
                 try {
                     paymentUsecase!!.doPayment(

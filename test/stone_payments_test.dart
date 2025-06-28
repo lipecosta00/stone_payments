@@ -75,6 +75,11 @@ class MockStonePaymentsPlatform
       {required String authorizationCode, bool? printReceipt}) {
     return Future.value(Transaction());
   }
+
+  @override
+  Future<String?> getCredentials() {
+    return Future.value('1234567890:12345');
+  }
 }
 
 void main() {

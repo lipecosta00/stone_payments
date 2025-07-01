@@ -84,10 +84,9 @@ class ActivateUsecase(
             } else {
                 serial = Build.SERIAL
             }   
+            return "$serial:$stoneCode"
         } catch (e: Exception) {
             return "FailN:FailS"
         }
-         
-        return "$serial:$stoneCode"
     }
 }

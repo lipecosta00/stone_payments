@@ -138,6 +138,13 @@ class MethodChannelStonePayments extends StonePaymentsPlatform {
   }
 
   @override
+  Future<String?> getStoneInfo() async {
+    final result = await methodChannel.invokeMethod<String>('getStoneInfo');
+
+    return result;
+  }
+
+  @override
   Future<String?> print(List<ItemPrintModel> items) async {
     final result = await methodChannel.invokeMethod<String>(
       'print',

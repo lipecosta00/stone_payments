@@ -75,4 +75,19 @@ class ActivateUsecase(
          
         return "$serial:$stoneCode"
     }
+
+    fun getStoneInfo(): String {
+        try {
+            val stoneCode = Stone.getUserModel(0).stoneCode
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                serial = Build.getSerial()
+            } else {
+                serial = Build.SERIAL
+            }   
+        } catch (e: Exception) {
+            return "FailN:FailS"
+        }
+         
+        return "$serial:$stoneCode"
+    }
 }

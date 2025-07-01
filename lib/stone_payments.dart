@@ -128,6 +128,15 @@ class StonePayments {
     return StonePaymentsPlatform.instance.getDeviceInfo();
   }
 
+  /// Obtém as credenciais do SDK da Stone Payments.
+  ///
+  /// Retorna:
+  ///
+  /// * Retorna uma `Future<String?>` com as credenciais no formato: serialNumber:stoneCode.
+  static Future<String?> getStoneInfo() {
+    return StonePaymentsPlatform.instance.getStoneInfo();
+  }
+
   /// Imprime um arquivo a partir de uma lista de textos e imagens.
   ///
   /// Parâmetros:

@@ -68,9 +68,14 @@ abstract class StonePaymentsPlatform extends PlatformInterface {
     throw UnimplementedError('getCredentials() has not been implemented.');
   }
 
-  /// Get Credentials
+  /// Get Device Info
   Future<String?> getDeviceInfo() {
     throw UnimplementedError('getDeviceInfo() has not been implemented.');
+  }
+  
+  /// Get Credentials
+  Future<String?> getStoneInfo() {
+    throw UnimplementedError('getStoneInfo() has not been implemented.');
   }
 
   /// Print

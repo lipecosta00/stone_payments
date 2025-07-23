@@ -58,16 +58,15 @@ class ActivateUsecase(
     }
 
     fun getCredentials(): String {
-        // val userList: List<UserModel>? = StoneStart.init(context)
-        // val stoneCode = userList?.first()?.stoneCode ?: "Sp_Mobile"
+        val userList: List<UserModel>? = StoneStart.init(context)
+        val stoneCode = userList?.first()?.stoneCode ?: "Sp_Mobile"
          
-       //  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-       //      serial = Build.getSerial()
-       //  } else {
-       //      serial = Build.SERIAL
-       //  }
-       //  return "$serial:$stoneCode"
-       return "Credentials1:Credentials2"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            serial = Build.getSerial()
+        } else {
+            serial = Build.SERIAL
+        }
+        return "$serial:$stoneCode"
     }
 
     fun getDeviceInfo(): String {

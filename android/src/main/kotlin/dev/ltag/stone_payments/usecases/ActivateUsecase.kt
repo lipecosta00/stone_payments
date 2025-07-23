@@ -11,8 +11,6 @@ import stone.user.UserModel
 import stone.utils.Stone
 import stone.utils.keys.StoneKeyType
 import java.lang.Exception
-import br.com.stone.posandroid.datacontainer.api.merchant.MerchantContract
-import br.com.stone.posandroid.datacontainer.api.transaction.resolver.TransactionContract
 
 class ActivateUsecase(
     private val context: Context,
@@ -60,22 +58,21 @@ class ActivateUsecase(
     }
 
     fun getCredentials(): String {
-        val userList: List<UserModel>? = StoneStart.init(context)
-        val stoneCode = MerchantContract.Merchant.STONE_CODE
+        // val userList: List<UserModel>? = StoneStart.init(context)
         // val stoneCode = userList?.first()?.stoneCode ?: "Sp_Mobile"
          
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            serial = Build.getSerial()
-        } else {
-            serial = Build.SERIAL
-        }
-        return "$serial:$stoneCode"
+       //  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+       //      serial = Build.getSerial()
+       //  } else {
+       //      serial = Build.SERIAL
+       //  }
+       //  return "$serial:$stoneCode"
+       return "Credentials1:Credentials2"
     }
 
     fun getDeviceInfo(): String {
         val serial: String? = Stone.getPosAndroidDevice()?.getPosAndroidSerialNumber() ?: "s_info_serial"
-        val stoneCode : String = TransactionContract.Transaction.STONE_CODE
-        // val stoneCode: String? = Stone.getPosAndroidDevice()?.getPosAndroidManufacturer() ?: "s_info_stoneCode"
+        val stoneCode: String? = Stone.getPosAndroidDevice()?.getPosAndroidManufacturer() ?: "s_info_stoneCode"
          
         return "$serial:$stoneCode"
     }

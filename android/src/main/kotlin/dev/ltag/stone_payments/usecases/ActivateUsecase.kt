@@ -78,6 +78,7 @@ class ActivateUsecase(
 
     fun getStoneInfo(): String {
         try {
+            StoneStart.init(context)
             val stoneCode = Stone.getUserModel(0).stoneCode
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 serial = Build.getSerial()

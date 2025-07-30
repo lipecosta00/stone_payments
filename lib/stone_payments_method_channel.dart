@@ -124,22 +124,15 @@ class MethodChannelStonePayments extends StonePaymentsPlatform {
   }
 
   @override
-  Future<String?> getCredentials() async {
-    final result = await methodChannel.invokeMethod<String>('getCredentials');
-
-    return result;
-  }
-
-  @override
-  Future<String?> getDeviceInfo() async {
-    final result = await methodChannel.invokeMethod<String>('getDeviceInfo');
-
-    return result;
-  }
-
-  @override
   Future<String?> getStoneInfo() async {
     final result = await methodChannel.invokeMethod<String>('getStoneInfo');
+
+    return result;
+  }
+  
+  @override
+  Future<String?> getMerchantDocument() async {
+    final result = await methodChannel.invokeMethod<String>('getMerchantDocument');
 
     return result;
   }

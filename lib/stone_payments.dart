@@ -115,26 +115,17 @@ class StonePayments {
   /// Retorna:
   ///
   /// * Retorna uma `Future<String?>` com as credenciais no formato: serialNumber:stoneCode.
-  static Future<String?> getCredentials() {
-    return StonePaymentsPlatform.instance.getCredentials();
-  }
-
-  /// Obtém as credenciais do SDK da Stone Payments.
-  ///
-  /// Retorna:
-  ///
-  /// * Retorna uma `Future<String?>` com as credenciais no formato: serialNumber:stoneCode.
-  static Future<String?> getDeviceInfo() {
-    return StonePaymentsPlatform.instance.getDeviceInfo();
-  }
-
-  /// Obtém as credenciais do SDK da Stone Payments.
-  ///
-  /// Retorna:
-  ///
-  /// * Retorna uma `Future<String?>` com as credenciais no formato: serialNumber:stoneCode.
   static Future<String?> getStoneInfo() {
     return StonePaymentsPlatform.instance.getStoneInfo();
+  }
+
+  /// Obtém o documento do comerciante.
+  ///
+  /// Retorna:
+  ///
+  /// * Retorna uma `Future<String?>` com o documento do comerciante.
+  static Future<String?> getMerchantDocument() {
+    return StonePaymentsPlatform.instance.getMerchantDocument();
   }
 
   /// Imprime um arquivo a partir de uma lista de textos e imagens.

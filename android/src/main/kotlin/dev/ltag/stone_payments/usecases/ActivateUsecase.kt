@@ -57,28 +57,11 @@ class ActivateUsecase(
         }
     }
 
-    fun getCredentials(): String {
-        val userList: List<UserModel>? = StoneStart.init(context)
-        val stoneCode = userList?.first()?.stoneCode ?: "Sp_Mobile"
-         
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            serial = Build.getSerial()
-        } else {
-            serial = Build.SERIAL
-        }
-        return "$serial:$stoneCode"
-    }
-
-    fun getDeviceInfo(): String {
-        val serial: String? = Stone.getPosAndroidDevice()?.getPosAndroidSerialNumber() ?: "s_info_serial"
-        val stoneCode: String? = Stone.getPosAndroidDevice()?.getPosAndroidManufacturer() ?: "s_info_stoneCode"
-         
-        return "$serial:$stoneCode"
-    }
-
     fun getStoneInfo(): String {
         try {
-            StoneStart.init(context)
+            if (!StoneStart.SDKInitialized) {
+                StoneStart.init(applicationContext)
+            }
             val stoneCode = Stone.getUserModel(0).stoneCode
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 serial = Build.getSerial()
@@ -89,5 +72,13 @@ class ActivateUsecase(
         } catch (e: Exception) {
             return "FailN:FailS"
         }
+    }
+
+    fun getMerchantDocument() : String {
+        if (!StoneStart.SDKInitialized) {
+            StoneStart.init(applicationContext)
+        }
+        val document = Stone.getUserModel(0).merchantDocumentNumber
+        return document
     }
 }

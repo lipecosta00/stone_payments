@@ -61,7 +61,7 @@ class ActivateUsecase(
         try {
             if (!StoneStart.SDKInitialized) {
                 val stoneKeys = HashMap<StoneKeyType, String>()
-                StoneStart.init(applicationContext, stoneKeys)
+                StoneStart.init(context, stoneKeys)
             }
             val stoneCode = Stone.getUserModel(0).stoneCode
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -78,7 +78,7 @@ class ActivateUsecase(
     fun getMerchantDocument() : String {
         if (!StoneStart.SDKInitialized) {
             val stoneKeys = HashMap<StoneKeyType, String>()
-            StoneStart.init(applicationContext, stoneKeys)
+            StoneStart.init(context, stoneKeys)
         }
         val document = Stone.getUserModel(0).merchantDocumentNumber
         return document

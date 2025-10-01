@@ -3,8 +3,8 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     ext {
-        kotlin_version = '1.9.0'
-        stone_sdk_version = '4.11.6'
+        kotlin_version = '1.9.20'
+        stone_sdk_version = '4.11.2'
 
         localProp = new Properties()
         fileName = 'local.properties'
@@ -19,7 +19,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.1.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }

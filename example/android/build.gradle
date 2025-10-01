@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        kotlin_version = '1.9.0'
+        kotlin_version = '1.9.20'
 
         localProp = new Properties()
         fileName = 'local.properties'
@@ -17,7 +17,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:7.2.2"
+        classpath "com.android.tools.build:gradle:8.1.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath("com.android.tools:r8:8.2.24")
     }

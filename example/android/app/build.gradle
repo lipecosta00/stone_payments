@@ -30,6 +30,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
+    namespace "dev.ltag.stone_payments_example"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

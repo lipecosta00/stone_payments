@@ -26,10 +26,10 @@ Inclua no arquivo **local.properties**, localizado na raiz do projeto, a variáv
 packageCloudReadToken=SEU_TOKEN
 ```
 
-O minSdkVersion deve ser igual ou maior que 23
+O minSdkVersion deve ser igual ou maior que 21
 
 ```
-minSdkVersion=23
+minSdkVersion=21
 ```
 
 ##### Atenção!

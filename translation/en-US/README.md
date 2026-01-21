@@ -26,10 +26,10 @@ Include the following variable in the **local.properties** file located at the r
 packageCloudReadToken=YOUR_TOKEN
 ```
 
-The minSdkVersion must be 23 or higher.
+The minSdkVersion must be 21 or higher.
 
 ```
-minSdkVersion=23
+minSdkVersion=21
 ```
 
 ##### Note!
